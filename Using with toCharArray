@@ -1,0 +1,33 @@
+class Main {
+
+    public static void main(String[] args) {
+
+        // convert these strings to either lowercase or uppercase to create consistency
+        System.out.println(isPalindrome("radar".toLowerCase()));
+
+        // Naman wouldn't have been palindrome if toLowerCase method wasn't used
+        System.out.println(isPalindrome("Naman".toLowerCase()));
+        System.out.println(isPalindrome("12321".toLowerCase()));
+        System.out.println(isPalindrome("12345".toLowerCase()));
+    }
+
+    private static boolean isPalindrome(String original) {
+
+        char[] data = original.toCharArray();
+
+        int i = 0;
+        int j = data.length - 1;
+
+        while (j > i) {
+
+            if (data[i] != data[j]) {
+                return false;
+            }
+
+            ++i;
+            --j;
+        }
+
+        return true;
+    }
+  }
