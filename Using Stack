@@ -1,0 +1,40 @@
+import java.util.Stack;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        // convert these strings to either lowercase or uppercase to create consistency
+        System.out.println(isPalindrome("radar".toLowerCase()));
+
+        // Naman wouldn't have been palindrome if toLowerCase method wasn't used
+        System.out.println(isPalindrome("Naman".toLowerCase()));
+        System.out.println(isPalindrome("12321".toLowerCase()));
+        System.out.println(isPalindrome("12345".toLowerCase()));
+    }
+
+    private static boolean isPalindrome(String original) {
+
+        char[] data = original.toCharArray();
+
+        Stack stack = new Stack<>();
+
+        for (char c: data) {
+
+            stack.push(c);
+        }
+
+        char[] data2 = new char[data.length];
+
+        int len = stack.size();
+
+        for (int i = 0; i < len; i++) {
+
+            data2[i] = stack.pop();
+        }
+
+        var reversed = new String(data2);
+
+        return original.equals(reversed);
+    }
+}
